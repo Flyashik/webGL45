@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebGL45</title>
+    <meta charset="UTF-8" />
+</head>
+
+<body>
+    <!--Inputs-->
+    <div class="input-container">
+        <div>
+            <input type="range" id="textureMixer" name="textureMixer"
+                   min="0" max="1000" value="100">
+            <label for="textureMixer">Mix texture</label>
+        </div>
+        <div class="input-container__light-pos">
+            <div>
+                <input type="range" id="lightPosX" name="lightPosX"
+                       min="-1000" max="1000">
+                <label for="lightPosX">LightPosX</label>
+            </div>
+            <div>
+                <input type="range" id="lightPosY" name="lightPosY"
+                       min="-1000" max="1000">
+                <label for="lightPosY">LightPosY</label>
+            </div>
+            <div>
+                <input type="range" id="lightPosZ" name="lightPosZ"
+                       min="-1000" max="1000">
+                <label for="lightPosZ">LightPosZ</label>
+            </div>
+        </div>
+        <div class="input-container__light-reflection">
+            <div>
+                <input type="range" id="ka" name="ka"
+                       min="0" max="1000">
+                <label for="ka">Ka</label>
+            </div>
+            <div>
+                <input type="range" id="kd" name="kd"
+                       min="0" max="1000">
+                <label for="kd">Kd</label>
+            </div>
+            <div>
+                <input type="range" id="ks" name="ks"
+                       min="0" max="1000">
+                <label for="ks">Ks</label>
+            </div>
+        </div>
+        <div>
+            <input type="range" id="shininess" name="shininess"
+                   min="1" max="128">
+            <label for="shininess">Shininess</label>
+        </div>
+        <div class="input-container__colors">
+            <div>
+                <input type="color" id="diffuseColor" name="diffuseColor" value="#FFFFFF">
+                <label for="diffuseColor">Diffuse color</label>
+            </div>
+            <div>
+                <input type="color" id="ambientColor" name="ambientColor" value="#FFFFFF">
+                <label for="ambientColor">Ambient color</label>
+            </div>
+            <div>
+                <input type="color" id="specularColor" name="specularColor" value="#FFFFFF">
+                <label for="specularColor">Specular color</label>
+            </div>
+        </div>
+        <div>
+            <input type="range" id="lightPower" name="lightPower" min="0" max="700" value="100">
+            <label for="lightPower">Light Power</label>
+        </div>
+        <div class="input-container__modes">
+            <div>
+                <label for="shadingMode">Шейдинг:</label>
+                <select id="shadingMode" name="shadingMode">
+                    <option value="0">Гуро</option>
+                    <option value="1">Фонг</option>
+                </select>
+            </div>
+            <div>
+                <label for="lightModelMode">Mодель освещения:</label>
+                <select id="lightModelMode" name="lightModelMode">
+                    <option value="0">Ламберт</option>
+                    <option value="1">Фонг</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+
+    <canvas id="cubesCanvas" width="1900" height="900"></canvas>
+
+    <!--Script-->
+    <script src="src/lib/gl-matrix.js"></script>
+    <script src="src/shaders.js"></script>
+    <script src="src/init.js"></script>
+    <script src="src/listeners.js"></script>
+    <script src="src/index.js"></script>
+</body>
+
+<style>
+.input-container {
+    display: flex;
+    gap: 5rem;
+}
+</style>
